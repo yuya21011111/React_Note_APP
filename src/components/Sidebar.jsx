@@ -1,6 +1,7 @@
 import React from 'react'
 import Main from './Main'
-const Sidebar = ({ onAddNote,notes, onDeleteNote }) => {
+import "./Sidebar.css"
+const Sidebar = ({ onAddNote,notes, onDeleteNote, activeNote, setActiveNote}) => {
   return (
   <div className='flex'>
      <div  className='bg-gray-100 h-max  p-5'>
@@ -13,7 +14,7 @@ const Sidebar = ({ onAddNote,notes, onDeleteNote }) => {
      {notes.map((note) => {
       return(
        
-          <div key={note.id}  className='mt-4 bg-gray-300 hover:bg-gray-500 '>
+          <div key={note.id} onClick={() => setActiveNote(note.id)}  className={`app-sidebar-note ${note.id === activeNote && "active"} mt-4 bg-blue-200 hover:bg-blue-400 `}>
             <div  className='mx-8 p-8'>
             <div className='text-sm text-red-500'>id:{note.id}</div>
                 <div className='flex justify-between'>

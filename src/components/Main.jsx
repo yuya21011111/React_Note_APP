@@ -1,11 +1,16 @@
-import React from 'react'
 
 const Main = () => {
   return (
-    <>
-        <div className='text-2xl font-semibold'>Main</div>
-        <div>123</div>
-    </>
+   <div className=''>
+    <div className=''>
+      <input type='text' className='border border-gray-500'></input>
+      <textarea className='border border-gray-500' id='' placeholder='本文を記入'></textarea>
+    </div>
+    <div className="">
+      <h1 className=''>タイトル</h1>
+      <div>ノート内容</div>
+    </div>
+   </div>
   )
 }
 

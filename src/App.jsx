@@ -7,6 +7,7 @@ import { data } from 'autoprefixer'
 
 function App() { 
   const [notes, setNotes] = useState([])
+  const [activeNote, setActiveNote] = useState('none')
 
   const onAddNote = () => {
     console.log('新しくノートが追加されました。')
@@ -26,7 +27,7 @@ function App() {
   }
   return (
     <>
-      <Sidebar onAddNote={onAddNote} onDeleteNote={onDeleteNote} notes={notes} />
+      <Sidebar onAddNote={onAddNote} onDeleteNote={onDeleteNote} notes={notes} activeNote={activeNote} setActiveNote={setActiveNote} />
     </>
   )
 }
