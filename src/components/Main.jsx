@@ -4,7 +4,7 @@ const Main = () => {
    <div className=''>
     <div className=''>
       <input type='text' className='border border-gray-500'></input>
-      <textarea className='border border-gray-500' id='' placeholder='本文を記入'></textarea>
+      <textarea className='border border-gray-500' id='' placeholder='本文を記入してください'></textarea>
     </div>
     <div className="">
       <h1 className=''>タイトル</h1>
