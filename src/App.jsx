@@ -1,20 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Sidebar from './components/Sidebar'
-import { data } from 'autoprefixer'
+import Main from './components/Main'
 
 function App() { 
   const [notes, setNotes] = useState([])
   const [activeNote, setActiveNote] = useState('none')
+  const [value, setValue] = useState('')
+  const [content, setContent] = useState('')
 
   const onAddNote = () => {
     console.log('新しくノートが追加されました。')
     const newnote = {
       id: Date.now(),
-      title: '新しいノート',
-      content: '新しいのノートの内容です。',
+      title: value,
+      content: content,
       modDate: new Date().toLocaleDateString('sv-SE'),
     }
     setNotes([...notes, newnote])
@@ -25,9 +25,18 @@ function App() {
    const filterNotes = notes.filter((note) => note.id !== id)
   setNotes(filterNotes)
   }
+
+  const handleChange = (newValue) => {
+    setValue(newValue);
+  };
+
+  const handleChangeContent = (newContent) => {
+    setContent(newContent);
+  };
   return (
     <>
       <Sidebar onAddNote={onAddNote} onDeleteNote={onDeleteNote} notes={notes} activeNote={activeNote} setActiveNote={setActiveNote} />
+      <Main  onChange={handleChange} onChangeContent={handleChangeContent} />
     </>
   )
 }

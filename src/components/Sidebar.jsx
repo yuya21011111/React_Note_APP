@@ -4,7 +4,7 @@ import "./Sidebar.css"
 const Sidebar = ({ onAddNote,notes, onDeleteNote, activeNote, setActiveNote}) => {
   return (
   <div className='flex'>
-     <div  className='bg-gray-100 h-max  p-5'>
+     <div  className='bg-gray-100 h-max w-full  p-5'>
       <div className='flex'>
         <h1 className='mx-auto text-2xl font-medium'>ノート</h1>
         <button onClick={onAddNote} className=' bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>追加</button>
@@ -27,12 +27,8 @@ const Sidebar = ({ onAddNote,notes, onDeleteNote, activeNote, setActiveNote}) =>
          </div>
        
       )
-     })}
-    
+     })}   
     </div>
-
-
-      <Main />
   </div>
   )
 }
